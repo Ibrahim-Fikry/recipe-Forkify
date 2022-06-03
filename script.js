@@ -32,8 +32,8 @@ forkify.addEventListener("change", (e) => {
 
 //#endregion
 
-// document.addEventListener('load', getdata())
-getdata()
+document.addEventListener('load', getdata())
+    // getdata()
 
 //#region   call api getdata
 
@@ -60,14 +60,13 @@ function getdetails(id) {
     reqdetails.open('GET', `https://forkify-api.herokuapp.com/api/get?rId=${id}`)
     reqdetails.send()
     reqdetails.addEventListener('readystatechange', () => {
-        console.log('getdetails');
         if (reqdetails.readyState == 4 && reqdetails.status == 200) {
-
-
-            detailobj = JSON.parse(reqdetails.response).recipe.ingredients
-            console.log('detailobj');
-            console.log(detailobj);
-            detailsarr = Array.from(detailobj)
+            console.log(JSON.parse(reqdetails.response).recipe.ingredients);
+            console.log('JSON.parse(reqdetails.response).recipe.ingredients');
+            detailsarr = JSON.parse(reqdetails.response).recipe.ingredients
+                //eldata btrg3 on el ajax <>>>object 
+                // transfer object to array 
+                // detailsarr = Array.from(detailobj)
 
         }
     })
@@ -120,15 +119,14 @@ datacontainer.addEventListener('click', (e) => {
             //call api detais by id 
             var recipeid = srctargetobj.recipe_id
             getdetails(recipeid)
-            console.log(detailsarr);
-
             var divv = ""
             for (let index = 0; index <= detailsarr.length; index++) {
 
                 divv += `<h5>${index+1}- ${detailsarr[index]}</h5>
-               
-                `
+                    
+                    `
             }
+
             deails.innerHTML = divv
             innerimg.setAttribute('src', srctarget)
             fixedbox.classList.replace('d-none', 'd-flex')

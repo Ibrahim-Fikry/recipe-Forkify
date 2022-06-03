@@ -20,7 +20,7 @@
     
     #btn-close {
         top: 10px;
-        right: 10px;
+        right: 25px;
         font-size: 30px;
         cursor: pointer;
         color: red;
@@ -61,4 +61,9 @@
     
     .home h1 {
         font-size: 4rem;
+    }
+    
+    #innerimg {
+        height: 300px;
+        width: 80px;
     }
