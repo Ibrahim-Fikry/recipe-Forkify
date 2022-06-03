@@ -1,45 +1,64 @@
-.imgdata {
-    height: 200px
-}
-
-.nav-link {
-    cursor: pointer;
-}
-
-#fixedbox {
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    top: 0;
-    left: 0;
-}
-
-#fixedbox img {
-    width: 100%;
-    /* height: 50%; */
-}
-
-#btn-close {
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: red;
-}
-
-#fixedbox img {
-    width: 100%;
-    /* height: 50%; */
-}
-
-.slayer {
-    width: 40%;
-}
-
-#fixedboxLayer {
-    height: 80%;
-}
-
-#forkify {
-    height: 10%;
-    overflow-y: hidden;
-}
+    .imgdata {
+        height: 200px
+    }
+    
+    .nav-link {
+        cursor: pointer;
+    }
+    
+    #fixedbox {
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+    
+    #fixedbox img {
+        width: 100%;
+        /* height: 50%; */
+    }
+    
+    #btn-close {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        color: red;
+    }
+    
+    #fixedbox img {
+        width: 100%;
+        /* height: 50%; */
+    }
+    
+    .slayer {
+        width: 40%;
+    }
+    
+    #fixedboxLayer {
+        height: 80%;
+    }
+    
+    #forkify {
+        height: 10%;
+        overflow-y: hidden;
+    }
+    
+    body {
+        background-image: url(images/1.png);
+        background-position: center;
+        background-attachment: fixed;
+    }
+    
+    .home {
+        background-image: url(images/mainBg.jpg);
+    }
+    
+    .home h1,
+    button {
+        color: aliceblue;
+    }
+    
+    .home h1 {
+        font-size: 4rem;
+    }

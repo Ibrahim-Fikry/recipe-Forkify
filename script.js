@@ -84,13 +84,15 @@ function display(x) {
     for (let index = 0; index < x.length; index++) {
 
         divv += `<div class="col-md-4">
-        <div class="bg-info">
-        <img src="${x[index].image_url}"class="w-100 imgdata"  alt="">
+        <div class="p-2">
+        <img src="${x[index].image_url}"class="w-100 imgdata pb-2"  alt="">
             <h6 >${x[index].title}</h6>
             <p>${x[index].social_rank}</p>
            
         </div>
-    </div>`
+    </div>
+    
+    `
 
     }
     datacontainer.innerHTML = divv

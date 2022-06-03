@@ -28,65 +28,69 @@
 </head>
 
 <body>
-
-
-
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-        <div class="container-fluid">
-
-            <select name="forkify" id="forkify">
-                <option value="onion">onion</option>
-                <option value="red pepper">red pepper</option>
-                <option value="beetroot">beetroot</option>
-                <option value="peas">peas</option>
-              
-            </select>
+    <!-- nave -->
+    <nav class="navbar navbar-expand-lg navbar-collapse fixed-top bg-light">
+        <div class="container  ">
+            <div class="mr-3">
+                <select name="forkify" id="forkify" class="me-0">
+                    <option value="onion">onion</option>
+                    <option value="red pepper">red pepper</option>
+                    <option value="beetroot">beetroot</option>
+                    <option value="peas">peas</option>
+                  
+                </select>
+            </div>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page">carrot</a>
+                        <a class="nav-link active" aria-current="page" href="#callnav">carrot</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page">broccoli</a>
+                        <a class="nav-link active" aria-current="page" href="#callnav">broccoli</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page">asparagus</a>
+                        <a class="nav-link active" aria-current="page" href="#callnav">asparagus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page">cauliflower</a>
+                        <a class="nav-link active" aria-current="page" href="#callnav">cauliflower</a>
                     </li>
 
-
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li> -->
                 </ul>
-                <!-- <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
+
             </div>
+
+
+
+
         </div>
     </nav>
-    <div class="container mt-5">
+    <div class="home vh-100 d-flex justify-content-center align-items-center text-center">
+
+        <div>
+            <h1>Never Miss a Recipe! </h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="d-flex ">
+                <!-- <label for="" class="me-3"> <h4 class="pt-1">SEARCH:</h4></label > -->
+                <button class="btn btn-success mr-2">search</button>
+                <input type="text" placeholder="search recepis" class="form-control">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- container -->
+    <div class="container mt-5 pt-5" id="callnav">
         <div class="row" id="datacontainer">
 
         </div>
+
     </div>
+
 
 
 
@@ -94,7 +98,7 @@
     <div id="fixedbox" class="vh-100 w-100 d-none justify-content-center align-items-center position-fixed ">
 
         <div class=" card slayer overflow-auto  position-relative" id="fixedboxLayer">
-            <div class="position-relative">
+            <div>
                 <img class="card-img-top" src="" id="innerimg">
                 <div class="card-body   ">
 
