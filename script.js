@@ -11,16 +11,25 @@ var fixedbox = document.getElementById('fixedbox')
 var deails = document.getElementById('deails')
 var fixedboxLayer = document.getElementById('fixedboxLayer')
 var closebtn = document.getElementById('btn-close')
+var forkify = document.getElementById('forkify')
 
 //#endregion
-//#region  navebar
-
+//#region  navebar   & dropdown
+// navebar
 for (let index = 0; index < links.length; index++) {
     links[index].addEventListener("click", (e) => {
         getdata(e.target.innerHTML)
     })
 
 }
+
+// dropdown
+
+forkify.addEventListener("change", (e) => {
+    getdata(forkify.value)
+})
+
+
 //#endregion
 
 // document.addEventListener('load', getdata())
@@ -28,7 +37,7 @@ getdata()
 
 //#region   call api getdata
 
-function getdata(target = "carrot") {
+function getdata(target = "onion") {
     var req = new XMLHttpRequest()
     req.open('GET', `https://forkify-api.herokuapp.com/api/search?q=${target}`)
     req.send()
@@ -67,11 +76,6 @@ function getdetails(id) {
 //#endregion
 
 
-
-
-
-// { "recipe": { "publisher": "101 Cookbooks", "ingredients": ["Green Garlic Dressing:", "2 stalks green garlic (or scallions), rinsed and chopped (~1/4 cup)", "1/4 teaspoon fine grain sea salt, plus more to taste", "2 tablespoons fresh lemon juice", "1/3 cup / 80 ml extra virgin olive oil", "2 tablespoons ripe avocado", "1 teaspoon honey, or to taste", "fresh pepper to taste", "1/2 bunch kale, destemmed, torn into pieces", "1 cup / 5.5 oz cooked farro or wheat berries (semi-pearled or whole)", "4-5 farmers' market carrots, very thinly sliced", "1 small bulb of fennel, transparently sliced", "1 avocado, cut into small cubes", "a big handful of almond slices, toasted"], "source_url": "http://www.101cookbooks.com/archives/kale-market-salad-recipe.html", "recipe_id": "47893", "image_url": "http://forkify-api.herokuapp.com/images/kale_market_saladd20e.jpg", "social_rank": 100, "publisher_url": "http://www.101cookbooks.com", "title": "Kale Market Salad" } }
-
 //#region  display api response
 
 
@@ -99,7 +103,7 @@ function display(x) {
 
 
 
-//#region details
+//#region details  for popup
 
 datacontainer.addEventListener('click', (e) => {
         var srctarget = e.target.src

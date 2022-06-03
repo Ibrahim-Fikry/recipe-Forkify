@@ -33,10 +33,15 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
+            <select name="forkify" id="forkify">
+                <option value="onion">onion</option>
+                <option value="red pepper">red pepper</option>
+                <option value="beetroot">beetroot</option>
+                <option value="peas">peas</option>
+              
+            </select>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -51,10 +56,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page">cauliflower</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
+
+
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
               </a>
@@ -69,9 +73,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul> -->
-                    <!-- <form class="d-flex">
+                    </li> -->
+                </ul>
+                <!-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form> -->
@@ -87,24 +91,20 @@
 
 
     <!-- fixed box -->
-    <div id="fixedbox" class="vh-100 w-100 d-none justify-content-center align-items-center position-fixed">
-        <div class=" card position-relative slayer overflow-auto" id="fixedboxLayer">
-            <img class="card-img-top" src="" id="innerimg">
-            <div class="card-body ">
+    <div id="fixedbox" class="vh-100 w-100 d-none justify-content-center align-items-center position-fixed ">
 
-                <p class="card-text " id="deails"></p>
+        <div class=" card slayer overflow-auto  position-relative" id="fixedboxLayer">
+            <div class="position-relative">
+                <img class="card-img-top" src="" id="innerimg">
+                <div class="card-body   ">
+
+                    <p class="card-text " id="deails"></p>
+
+                </div>
                 <i class="fa-solid fa-rectangle-xmark   position-absolute" id="btn-close"></i>
             </div>
-        </div>
 
-        <!-- <div class="card " position-relative slayer " style="width: 18rem; " id="fixedboxLayer ">
-            <img src="... " class="card-img-top " alt="... " id="innerimg ">>
-            <div class="card-body ">
-                <p class="card-text "id="deails "> </p>
-           
-                <i class="fa-solid fa-rectangle-xmark position-absolute " id="btn-close "></i>
-            </div>
-        </div> -->
+        </div>
     </div>
 
 

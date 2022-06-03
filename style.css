@@ -38,3 +38,8 @@
 #fixedboxLayer {
     height: 80%;
 }
+
+#forkify {
+    height: 10%;
+    overflow-y: hidden;
+}
