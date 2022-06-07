@@ -33,6 +33,7 @@ forkify.addEventListener("change", (e) => {
 //#endregion
 
 document.addEventListener('load', getdata())
+document.addEventListener('load', getdetails())
     // getdata()
 
 //#region   call api getdata
@@ -46,28 +47,28 @@ function getdata(target = "onion") {
             arrdata = JSON.parse(req.response).recipes;
             display(arrdata)
         }
-
     })
 }
-
-
 
 //#endregion
 
 //#region   call api getdetails
-function getdetails(id) {
+function getdetails(id = 0) {
     var reqdetails = new XMLHttpRequest()
-    reqdetails.open('GET', `https://forkify-api.herokuapp.com/api/get?rId=${id}`)
+    reqdetails.open('get', `https://forkify-api.herokuapp.com/api/get?rId=${id}`)
     reqdetails.send()
     reqdetails.addEventListener('readystatechange', () => {
         if (reqdetails.readyState == 4 && reqdetails.status == 200) {
-            console.log(JSON.parse(reqdetails.response).recipe.ingredients);
-            console.log('JSON.parse(reqdetails.response).recipe.ingredients');
             detailsarr = JSON.parse(reqdetails.response).recipe.ingredients
-                //eldata btrg3 on el ajax <>>>object 
-                // transfer object to array 
-                // detailsarr = Array.from(detailobj)
+            var divv = ""
 
+            for (let index = 0; index <= detailsarr.length; index++) {
+
+                divv += `<h5>${index+1}-${detailsarr[index]}</h5>
+                    
+                    `
+            }
+            deails.innerHTML = divv
         }
     })
 }
@@ -75,7 +76,7 @@ function getdetails(id) {
 //#endregion
 
 
-//#region  display api response
+//#region  display api  get  response
 
 
 function display(x) {
@@ -104,35 +105,27 @@ function display(x) {
 
 
 
-//#region details  for popup
-
+//#region details  for popup  pass id to etdeatil()
+var srctargetobj = {}
+var srctarget
 datacontainer.addEventListener('click', (e) => {
-        var srctarget = e.target.src
-        var srctargetobj = {}
-        if (srctarget != null) {
-            // 3 alchan agieb el object bta3 el selected img
-            for (let index = 0; index < arrdata.length; index++) {
-                if (arrdata[index].image_url == srctarget) {
-                    srctargetobj = arrdata[index];
-                }
-            }
-            //call api detais by id 
-            var recipeid = srctargetobj.recipe_id
-            getdetails(recipeid)
-            var divv = ""
-            for (let index = 0; index <= detailsarr.length; index++) {
+    srctarget = e.target.src
 
-                divv += `<h5>${index+1}- ${detailsarr[index]}</h5>
-                    
-                    `
+    if (srctarget != null) {
+        // 3 alchan agieb el object bta3 el selected img
+        for (let index = 0; index < arrdata.length; index++) {
+            if (arrdata[index].image_url == srctarget) {
+                srctargetobj = arrdata[index];
             }
-
-            deails.innerHTML = divv
-            innerimg.setAttribute('src', srctarget)
-            fixedbox.classList.replace('d-none', 'd-flex')
         }
-    })
-    //#endregion
+        //call api detais by id 
+        var recipeid = srctargetobj.recipe_id
+        getdetails(recipeid)
+        innerimg.setAttribute('src', srctarget)
+        fixedbox.classList.replace('d-none', 'd-flex')
+    }
+})
+
 
 
 
